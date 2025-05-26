@@ -38,7 +38,7 @@ for (var year = startYear; year <= endYear; year++) {
     
     img = img.unmask(k_img.select('estimate').clip(roi));
   }                  
-  img = img.clip(roi).reproject({
+  img = img.clip(roi).resample('bicubic').reproject({
     crs: 'EPSG:4326', 
     scale: scale        
   });
